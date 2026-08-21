@@ -5,12 +5,12 @@ def account_manager(account):
   a = input("What would you like to do? ")
   if a == 'I':
     amount = input("How much would you like to invest? Please type just the number: ")
-    while true:
+    while True:
       if amount < account.balance:
         break
       else:
         amount = input(f"Not enough balance! Your current balance is {account.balance} Try again: ")
-    while true:
+    while True:
       try:
         amount = float(amount)
         break
@@ -20,7 +20,7 @@ def account_manager(account):
     account.invest(amount)
   elif a == "D":
     amount = input("How much would you like to deposit? Please type just the number: ")
-    while true:
+    while True:
       try:
         amount = float(amount)
         break
@@ -30,12 +30,12 @@ def account_manager(account):
     account.deposit(amount)
   elif a == "W":
     amount = input("How much would you like to withdraw? Please type just the number: ")
-    while true:
+    while True:
       if amount < account.balance:
         break
       else:
         amount = input(f"Not enough balance! Your current balance is {account.balance} Try again: ")
-    while true:
+    while True:
       try:
         amount = float(amount)
         break
@@ -45,12 +45,12 @@ def account_manager(account):
     account.withdraw(amount)
   elif a == "G":
     amount = input("How much would you like to gamble? Please type just the number: ")
-    while true:
+    while True:
       if amount < account.balance:
         break
       else:
         amount = input(f"Not enough balance! Your current balance is {account.balance} Try again: ")
-    while true:
+    while True:
       try:
         amount=float(amount)
         break
