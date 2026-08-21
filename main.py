@@ -2,8 +2,8 @@
 from account import Account
 
 def account_manager(account):
-  input = input("What would you like to do? ")
-  if input == 'I':
+  a = input("What would you like to do? ")
+  if a == 'I':
     amount = input("How much would you like to invest? Please type just the number: ")
     while true:
       if amount < account.balance:
@@ -18,7 +18,7 @@ def account_manager(account):
         amount = input("Please format the number correctly! Try again: ")
     amount = round(amount, 2)
     account.invest(amount)
-  elif input == "D":
+  elif a == "D":
     amount = input("How much would you like to deposit? Please type just the number: ")
     while true:
       try:
@@ -28,7 +28,7 @@ def account_manager(account):
         amount = input("Please format the number correctly! Try again: ")
     amount = round(amount, 2)
     account.deposit(amount)
-  elif input == "W":
+  elif a == "W":
     amount = input("How much would you like to withdraw? Please type just the number: ")
     while true:
       if amount < account.balance:
@@ -43,7 +43,7 @@ def account_manager(account):
         amount = input("Please format the number correctly! Try again: ")
     amount = round(amount, 2)
     account.withdraw(amount)
-  elif input == "G":
+  elif a == "G":
     amount = input("How much would you like to gamble? Please type just the number: ")
     while true:
       if amount < account.balance:
@@ -58,7 +58,7 @@ def account_manager(account):
         amount = input("Please format the number correctly! Try again: ")
     amount = round(amount, 2)
     account.gamble(amount)
-  elif input == 'Q':
+  elif a == 'Q':
     return False
   else:
     input("To invest, press 'I'. To deposit, press 'D'. To withdraw, press 'W'. To gamble, press 'G'. To quit, press 'Q'.")
