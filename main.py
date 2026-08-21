@@ -1,1 +1,88 @@
+# This is the code to manage the user's accounts
+from account import Account
 
+def account_manage(account):
+  input = input("What would you like to do?")
+  if input == 'I':
+    amount = input("How much would you like to invest? Please type just the number:")
+    while true:
+      if amount < account.balance:
+        break
+      else:
+        amount = input(f"Not enough balance! Your current balance is {account.balance} Try again:")
+    while true:
+      try:
+        float(amount)
+        break
+      except ValueError:
+        amount = input("Please format the number correctly! Try again:")
+    amount = round(amount, 2)
+    account.invest(amount)
+  elif input == "D":
+    amount = input("How much would you like to deposit? Please type just the number:")
+    while true:
+      try:
+        float(amount)
+        break
+      except ValueError:
+        amount = input("Please format the number correctly! Try again:")
+    amount = round(amount, 2)
+    account.deposit(amount)
+  elif input == "W":
+    amount = input("How much would you like to withdraw? Please type just the number:")
+    while true:
+      if amount < account.balance:
+        break
+      else:
+        amount = input(f"Not enough balance! Your current balance is {account.balance} Try again:")
+    while true:
+      try:
+        float(amount)
+        break
+      except ValueError:
+        amount = input("Please format the number correctly! Try again:")
+    amount = round(amount, 2)
+    account.withdraw(amount)
+  elif input == "G":
+    amount = input("How much would you like to gamble? Please type just the number:")
+    while true:
+      if amount < account.balance:
+        break
+      else:
+        amount = input(f"Not enough balance! Your current balance is {account.balance} Try again:")
+    while true:
+      try:
+        float(amount)
+        break
+      except ValueError:
+        amount = input("Please format the number correctly! Try again:")
+    amount = round(amount, 2)
+    account.gamble(amount)
+  elif input == 'Q':
+    return False
+  else:
+    input("To invest, press 'I'. To deposit, press 'D'. To withdraw, press 'W'. To gamble, press 'G'. To quit, press 'Q'.")
+    
+    
+    
+  
+
+def main():
+  print("Welcome to the Account Manager!")
+  print("-----------------------------------------")
+  name = input("To create your account, first type in the account name:")
+  balance = input("Now, type in your current balance as a number without dollar signs:")
+  while True:
+    try:
+      float(balance)
+      break
+    except ValueError:
+      balance = input("Please format the number correctly! Try again:")
+  user = Account(name, balance)
+  print(f"Your account name is {name} and its current balance is ${balance}")
+  print("To invest, press 'I'. To deposit, press 'D'. To withdraw, press 'W'. To gamble, press 'G'. To quit, press 'Q'.")
+  while True:
+    account_manager(user)
+  print("Thank you!")
+
+main()
