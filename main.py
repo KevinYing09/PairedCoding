@@ -12,7 +12,7 @@ def account_manager(account):
         amount = input(f"Not enough balance! Your current balance is {account.balance} Try again: ")
     while true:
       try:
-        float(amount)
+        amount = float(amount)
         break
       except ValueError:
         amount = input("Please format the number correctly! Try again: ")
@@ -22,7 +22,7 @@ def account_manager(account):
     amount = input("How much would you like to deposit? Please type just the number: ")
     while true:
       try:
-        float(amount)
+        amount = float(amount)
         break
       except ValueError:
         amount = input("Please format the number correctly! Try again: ")
@@ -37,7 +37,7 @@ def account_manager(account):
         amount = input(f"Not enough balance! Your current balance is {account.balance} Try again: ")
     while true:
       try:
-        float(amount)
+        amount = float(amount)
         break
       except ValueError:
         amount = input("Please format the number correctly! Try again: ")
@@ -52,7 +52,7 @@ def account_manager(account):
         amount = input(f"Not enough balance! Your current balance is {account.balance} Try again: ")
     while true:
       try:
-        float(amount)
+        amount=float(amount)
         break
       except ValueError:
         amount = input("Please format the number correctly! Try again: ")
@@ -74,7 +74,7 @@ def main():
   balance = input("Now, type in your current balance as a number without dollar signs: ")
   while True:
     try:
-      float(balance)
+      balance = float(balance)
       break
     except ValueError:
       balance = input("Please format the number correctly! Try again: ")
