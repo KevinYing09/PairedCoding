@@ -6,16 +6,16 @@ def account_manager(account):
   if a == 'I':
     amount = input("How much would you like to invest? Please type just the number: ")
     while True:
-      if amount < account.balance:
-        break
-      else:
-        amount = input(f"Not enough balance! Your current balance is {account.balance} Try again: ")
-    while True:
       try:
         amount = float(amount)
         break
       except ValueError:
         amount = input("Please format the number correctly! Try again: ")
+    while True:
+      if amount < account.balance:
+        break
+      else:
+        amount = input(f"Not enough balance! Your current balance is {account.balance} Try again: ")
     amount = round(amount, 2)
     account.invest(amount)
   elif a == "D":
@@ -31,31 +31,31 @@ def account_manager(account):
   elif a == "W":
     amount = input("How much would you like to withdraw? Please type just the number: ")
     while True:
-      if amount < account.balance:
-        break
-      else:
-        amount = input(f"Not enough balance! Your current balance is {account.balance} Try again: ")
-    while True:
+      while True:
       try:
         amount = float(amount)
         break
       except ValueError:
         amount = input("Please format the number correctly! Try again: ")
-    amount = round(amount, 2)
-    account.withdraw(amount)
-  elif a == "G":
-    amount = input("How much would you like to gamble? Please type just the number: ")
-    while True:
       if amount < account.balance:
         break
       else:
         amount = input(f"Not enough balance! Your current balance is {account.balance} Try again: ")
+    amount = round(amount, 2)
+    account.withdraw(amount)
+  elif a == "G":
+    amount = input("How much would you like to gamble? Please type just the number: ")
     while True:
       try:
         amount=float(amount)
         break
       except ValueError:
         amount = input("Please format the number correctly! Try again: ")
+    while True:
+      if amount < account.balance:
+        break
+      else:
+        amount = input(f"Not enough balance! Your current balance is {account.balance} Try again: ")
     amount = round(amount, 2)
     account.gamble(amount)
   elif a == 'Q':
