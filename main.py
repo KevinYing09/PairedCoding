@@ -12,7 +12,7 @@ def account_manager(account):
       except ValueError:
         amount = input("Please format the number correctly! Try again: ")
     while True:
-      if amount < account.balance:
+      if amount > account.balance:
         break
       else:
         amount = input(f"Not enough balance! Your current balance is {account.balance} Try again: ")
@@ -31,13 +31,13 @@ def account_manager(account):
   elif a == "W":
     amount = input("How much would you like to withdraw? Please type just the number: ")
     while True:
-      while True:
       try:
-        amount = float(amount)
+        amount=float(amount)
         break
       except ValueError:
         amount = input("Please format the number correctly! Try again: ")
-      if amount < account.balance:
+    while True:
+      if amount > account.balance:
         break
       else:
         amount = input(f"Not enough balance! Your current balance is {account.balance} Try again: ")
@@ -52,7 +52,7 @@ def account_manager(account):
       except ValueError:
         amount = input("Please format the number correctly! Try again: ")
     while True:
-      if amount < account.balance:
+      if amount > account.balance:
         break
       else:
         amount = input(f"Not enough balance! Your current balance is {account.balance} Try again: ")
