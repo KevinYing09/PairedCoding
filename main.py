@@ -1,6 +1,15 @@
 # This is the code to manage the user's accounts
 from account import Account
 
+def float_check(a):
+   while True:
+      try:
+        a=float(a)
+        return a
+      except ValueError:
+        a = input("Please format the number correctly! Try again: ")
+  
+
 def account_manager(account):
   a = input("What would you like to do? ")
   if a == 'I':
@@ -12,7 +21,7 @@ def account_manager(account):
       except ValueError:
         amount = input("Please format the number correctly! Try again: ")
     while True:
-      if amount > account.balance:
+      if amount < account.balance:
         break
       else:
         amount = input(f"Not enough balance! Your current balance is {account.balance} Try again: ")
@@ -31,13 +40,8 @@ def account_manager(account):
   elif a == "W":
     amount = input("How much would you like to withdraw? Please type just the number: ")
     while True:
-      try:
-        amount=float(amount)
-        break
-      except ValueError:
-        amount = input("Please format the number correctly! Try again: ")
-    while True:
-      if amount > account.balance:
+      amount = float_check(amount)
+      if amount < account.balance:
         break
       else:
         amount = input(f"Not enough balance! Your current balance is {account.balance} Try again: ")
@@ -52,7 +56,7 @@ def account_manager(account):
       except ValueError:
         amount = input("Please format the number correctly! Try again: ")
     while True:
-      if amount > account.balance:
+      if amount < account.balance:
         break
       else:
         amount = input(f"Not enough balance! Your current balance is {account.balance} Try again: ")
